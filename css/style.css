@@ -645,6 +645,91 @@ img {
     background: var(--color-bg);
 }
 
+/* Video work cards */
+.project-video-showcase {
+    margin-top: 36px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(163, 160, 184, 0.1), rgba(212, 165, 165, 0.08));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.video-showcase-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.video-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 9px;
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    border-radius: 20px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.video-showcase-heading h4 {
+    font-size: 1.08rem;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.video-showcase-heading p {
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.video-card {
+    overflow: hidden;
+    background: var(--color-bg-card);
+    border: 1px solid rgba(163, 160, 184, 0.22);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(163, 160, 184, 0.45);
+    box-shadow: var(--shadow-md);
+}
+
+.video-frame {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #2e2d39, #57536c);
+    line-height: 0;
+}
+
+.video-frame video {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    background: #2e2d39;
+}
+
+.video-info {
+    padding: 15px 16px 16px;
+}
+
+.video-info h5 {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    margin-bottom: 9px;
+    font-weight: 600;
+}
 .campus-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -997,6 +1082,15 @@ img {
 @media (max-width: 480px) {
     .project-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .project-video-showcase {
+        padding: 20px;
+    }
+
+    .video-showcase-heading {
+        flex-direction: column;
+        gap: 8px;
     }
 }
 
