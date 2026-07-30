@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李雨桐 | 个人作品集</title>
-    <link rel="stylesheet" href="css/style.css?v=20260731-1">
+    <link rel="stylesheet" href="css/style.css?v=20260731-2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -232,34 +232,37 @@
                     </div>
                     <div class='video-gallery'>
                         <article class='video-card'>
-                            <div class='video-frame'>
-                                <video controls preload='metadata' playsinline aria-label='Product video'>
-                                    <source src='vedio/1%20%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88%E8%80%99%E8%80%99%E6%9F%91%E9%A3%8E%E5%91%B3%E7%B2%BE%E9%85%BF%EF%BC%8825%EF%BC%89.mp4' type='video/mp4'>
-                                    Your browser does not support video playback.
-                                </video>
-                            </div>
+                            <button class='video-trigger' type='button' data-video-src='vedio/1%20%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88%E8%80%99%E8%80%99%E6%9F%91%E9%A3%8E%E5%91%B3%E7%B2%BE%E9%85%BF%EF%BC%8825%EF%BC%89.mp4' aria-label='Play video 01'>
+                                <span class='video-poster video-poster-1'>
+                                    <span class='video-poster-index'>01 / 03</span>
+                                    <span class='video-play-icon' aria-hidden='true'>&#9654;</span>
+                                    <span class='video-poster-caption'>CLICK TO PLAY</span>
+                                </span>
+                            </button>
                             <div class='video-info'>
                                 <h5>&#39118;&#33457;&#38634;&#26376;&#32793;&#32793;&#26577;&#39118;&#21619;&#31934;&#37247;</h5>
                                 <span class='tag'>AIGC VIDEO</span><span class='tag'>PRODUCT CREATIVE</span>
                             </div>
                         </article>                        <article class='video-card'>
-                            <div class='video-frame'>
-                                <video controls preload='metadata' playsinline aria-label='Product video'>
-                                    <source src='vedio/13-%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88%E6%BB%87%E7%BA%A2%E9%85%BF%E8%90%BD%E9%9C%9E%E7%B2%BE%E9%85%BF.mp4' type='video/mp4'>
-                                    Your browser does not support video playback.
-                                </video>
-                            </div>
+                            <button class='video-trigger' type='button' data-video-src='vedio/13-%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88%E6%BB%87%E7%BA%A2%E9%85%BF%E8%90%BD%E9%9C%9E%E7%B2%BE%E9%85%BF.mp4' aria-label='Play video 02'>
+                                <span class='video-poster video-poster-2'>
+                                    <span class='video-poster-index'>02 / 03</span>
+                                    <span class='video-play-icon' aria-hidden='true'>&#9654;</span>
+                                    <span class='video-poster-caption'>CLICK TO PLAY</span>
+                                </span>
+                            </button>
                             <div class='video-info'>
                                 <h5>&#39118;&#33457;&#38634;&#26376;&#28359;&#32418;&#37247;&#33853;&#38686;&#31934;&#37247;</h5>
                                 <span class='tag'>AIGC VIDEO</span><span class='tag'>PRODUCT CREATIVE</span>
                             </div>
                         </article>                        <article class='video-card'>
-                            <div class='video-frame'>
-                                <video controls preload='metadata' playsinline aria-label='Product video'>
-                                    <source src='vedio/6%20%E4%B9%90%E5%A0%A1%E5%B0%8F%E9%BA%A6%E7%B2%BE%E9%85%BF%EF%BC%8829%EF%BC%89.mp4' type='video/mp4'>
-                                    Your browser does not support video playback.
-                                </video>
-                            </div>
+                            <button class='video-trigger' type='button' data-video-src='vedio/6%20%E4%B9%90%E5%A0%A1%E5%B0%8F%E9%BA%A6%E7%B2%BE%E9%85%BF%EF%BC%8829%EF%BC%89.mp4' aria-label='Play video 03'>
+                                <span class='video-poster video-poster-3'>
+                                    <span class='video-poster-index'>03 / 03</span>
+                                    <span class='video-play-icon' aria-hidden='true'>&#9654;</span>
+                                    <span class='video-poster-caption'>CLICK TO PLAY</span>
+                                </span>
+                            </button>
                             <div class='video-info'>
                                 <h5>&#20048;&#22561;&#23567;&#40614;&#31934;&#37247;</h5>
                                 <span class='tag'>AIGC VIDEO</span><span class='tag'>PRODUCT CREATIVE</span>
@@ -534,6 +537,54 @@
         <img class="lightbox-img" id="lightboxImg" src="" alt="">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
+
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-modal-backdrop" data-video-close></div>
+        <section class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Video player">
+            <button class="video-modal-close" type="button" data-video-close aria-label="Close video">&times;</button>
+            <video class="video-modal-player" id="videoModalPlayer" controls playsinline preload="none"></video>
+        </section>
+    </div>
+
+    <script>
+    (() => {
+        const modal = document.getElementById('videoModal');
+        const player = document.getElementById('videoModalPlayer');
+        const triggers = document.querySelectorAll('.video-trigger');
+
+        if (!modal || !player || triggers.length === 0) return;
+
+        const closeModal = () => {
+            player.pause();
+            player.removeAttribute('src');
+            player.load();
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('video-modal-open');
+        };
+
+        triggers.forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                player.src = trigger.dataset.videoSrc;
+                player.load();
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('video-modal-open');
+                player.play().catch(() => {});
+            });
+        });
+
+        modal.querySelectorAll('[data-video-close]').forEach((control) => {
+            control.addEventListener('click', closeModal);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
 
     <script src="js/main.js"></script>
 </body>
