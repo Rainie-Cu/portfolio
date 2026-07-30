@@ -12,6 +12,8 @@
     --color-primary-dark: #7A7894;
     --color-accent: #D4A5A5;
     --color-accent-light: #E8C5C5;
+    --color-badge: #C97878;
+    --color-badge-dark: #A95862;
     --color-secondary: #B5C4B1;
     --color-secondary-light: #D4E0D1;
     --color-bg: #F5F1EB;
@@ -374,11 +376,12 @@ img {
 
 .badge {
     font-size: 0.7rem;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    background: linear-gradient(135deg, var(--color-badge), var(--color-badge-dark));
     color: white;
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: 500;
+    box-shadow: 0 3px 8px rgba(169, 88, 98, 0.22);
 }
 
 .edu-major {
