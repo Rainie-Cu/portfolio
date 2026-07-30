@@ -4,6 +4,7 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
+
 // 滚动时导航栏样式变化
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
