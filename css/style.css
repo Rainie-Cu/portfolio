@@ -12,8 +12,8 @@
     --color-primary-dark: #7A7894;
     --color-accent: #D4A5A5;
     --color-accent-light: #E8C5C5;
-    --color-badge: #D85C64;
-    --color-badge-dark: #B83B4B;
+    --color-badge: lch(55.25% 53.35 22.27);
+    --color-badge-dark: #c65b69;
     --color-secondary: #B5C4B1;
     --color-secondary-light: #D4E0D1;
     --color-bg: #F5F1EB;
